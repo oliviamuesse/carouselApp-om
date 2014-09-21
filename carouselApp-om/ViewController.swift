@@ -18,6 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     @IBAction func onSignInButton(sender: AnyObject) {
         
         //loadingActivityView.startAnimating()
@@ -27,10 +31,11 @@ class ViewController: UIViewController {
             var alertView = UIAlertView(title: "Email and password required", message: "Please enter email and password", delegate: self, cancelButtonTitle: "OK")
             alertView.show()
         } else {
-        
-        delay(2, closure: { () -> () in
-            //self.loadingActivityView.stopAnimating()
-            //self.signInButton.selected = false
+            var signInAlertView = UIAlertView(title: "Signing In", message: "", delegate: self, cancelButtonTitle: "")
+            signInAlertView.show()
+            
+        delay(1.5, closure: { () -> () in
+            signInAlertView.dismissWithClickedButtonIndex(0, animated: true)
             
             if (self.emailTextField.text == "olivia@indiegogo.com") && (self.passwordTextField.text == "password") {
                 self.performSegueWithIdentifier("signInSegue", sender: self)

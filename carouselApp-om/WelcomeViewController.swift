@@ -8,11 +8,19 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
-
+class WelcomeViewController: UIViewController, UIScrollViewDelegate {
+   
+    @IBOutlet weak var welcomeScrollView: UIScrollView!
+    @IBOutlet weak var wecome1ImageView: UIImageView!
+    @IBOutlet weak var welcome2ImageView: UIImageView!
+    @IBOutlet weak var welcome3ImageView: UIImageView!
+    @IBOutlet weak var welcome4ImageView: UIImageView!
+    @IBOutlet weak var pageControl: UIPageControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        welcomeScrollView.contentSize = CGSize(width: 1280, height: 568)
+        welcomeScrollView.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -20,6 +28,15 @@ class WelcomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView!) {
+        // Get the current page based on the scroll offset
+        var page = Int(welcomeScrollView.contentOffset.x / 320)
+        
+        // Set the current page, so the dots will update
+        pageControl.currentPage = page
+    }
+
     
 
     /*
