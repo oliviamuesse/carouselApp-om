@@ -9,10 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var backButton: UIButton!
-
+    @IBOutlet weak var scrollView: UIScrollView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        scrollView.contentSize = CGSize(width: 320, height: 800)
         // Do any additional setup after loading the view, typically from a nib.
     }
     
