@@ -13,6 +13,7 @@
 		45BE5E4019CE86C00056891F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45BE5E3F19CE86C00056891F /* Images.xcassets */; };
 		45BE5E4319CE86C00056891F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45BE5E4119CE86C00056891F /* LaunchScreen.xib */; };
 		45BE5E4F19CE86C00056891F /* carouselApp_omTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BE5E4E19CE86C00056891F /* carouselApp_omTests.swift */; };
+		45BE5E5919CE87530056891F /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BE5E5819CE87530056891F /* ScrollViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		45BE5E4819CE86C00056891F /* carouselApp-omTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "carouselApp-omTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		45BE5E4D19CE86C00056891F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45BE5E4E19CE86C00056891F /* carouselApp_omTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carouselApp_omTests.swift; sourceTree = "<group>"; };
+		45BE5E5819CE87530056891F /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				45BE5E3819CE86C00056891F /* AppDelegate.swift */,
 				45BE5E3A19CE86C00056891F /* ViewController.swift */,
+				45BE5E5819CE87530056891F /* ScrollViewController.swift */,
 				45BE5E3C19CE86C00056891F /* Main.storyboard */,
 				45BE5E3F19CE86C00056891F /* Images.xcassets */,
 				45BE5E4119CE86C00056891F /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45BE5E3B19CE86C00056891F /* ViewController.swift in Sources */,
+				45BE5E5919CE87530056891F /* ScrollViewController.swift in Sources */,
 				45BE5E3919CE86C00056891F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

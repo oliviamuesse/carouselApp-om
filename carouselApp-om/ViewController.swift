@@ -9,10 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    @IBOutlet weak var backButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func goBack(sender: AnyObject) {
+        navigationController?.popToRootViewControllerAnimated(true)
     }
 
     override func didReceiveMemoryWarning() {
