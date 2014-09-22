@@ -31,7 +31,7 @@ class ViewController: UIViewController {
             var alertView = UIAlertView(title: "Email and password required", message: "Please enter email and password", delegate: self, cancelButtonTitle: "OK")
             alertView.show()
         } else {
-            var signInAlertView = UIAlertView(title: "Signing In", message: "", delegate: self, cancelButtonTitle: "")
+            var signInAlertView = UIAlertView(title: "Signing in...", message: nil, delegate: self, cancelButtonTitle: nil)
             signInAlertView.show()
             
         delay(1.5, closure: { () -> () in

@@ -16,6 +16,7 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var welcome3ImageView: UIImageView!
     @IBOutlet weak var welcome4ImageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var toCarouselButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +34,11 @@ class WelcomeViewController: UIViewController, UIScrollViewDelegate {
         // Get the current page based on the scroll offset
         var page = Int(welcomeScrollView.contentOffset.x / 320)
         
+        if (page == 3) {
+            UIView.animateWithDuration(0.3) {
+                self.toCarouselButton.alpha = 1
+            }
+        }
         // Set the current page, so the dots will update
         pageControl.currentPage = page
     }
