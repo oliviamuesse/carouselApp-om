@@ -17,7 +17,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro" id="djI-56-80O">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1162"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="1136"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="A7c-WU-KFu">
@@ -40,6 +40,30 @@
                                             <segue destination="FSF-Uj-fh8" kind="push" id="gec-7Q-frC"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile1" id="S7v-wK-4mE">
+                                        <rect key="frame" x="47" y="742" width="153" height="152"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile2" id="oV1-ze-0IO">
+                                        <rect key="frame" x="201" y="742" width="76" height="75"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile3" id="oVJ-mg-NwE">
+                                        <rect key="frame" x="201" y="819" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile4" id="UUB-Gq-fCK">
+                                        <rect key="frame" x="46" y="896" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile5" id="u9v-tu-LjE">
+                                        <rect key="frame" x="123" y="896" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro_tile6" id="lq7-EU-3mC">
+                                        <rect key="frame" x="201" y="896" width="76" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -123,19 +147,32 @@
                                 <state key="normal" image="create_button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="onCreateDropbox:" destination="FSF-Uj-fh8" eventType="touchUpInside" id="OR9-l2-ARc"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="GlB-F6-Yoo" appends="YES" id="fkq-PD-Zcu"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="4YS-QW-a1p"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="createDropbox" destination="iaC-LJ-8oH" id="S3c-BU-pC8"/>
                         <outlet property="goBackButton" destination="cQ9-MB-sr3" id="2ik-6j-rDt"/>
                         <outlet property="scrollView" destination="8UE-9H-wBb" id="teI-ah-F1j"/>
-                        <segue destination="MXx-Tn-U1Z" kind="modal" id="ygu-u7-UNj"/>
+                        <segue destination="MXx-Tn-U1Z" kind="modal" identifier="createSegue" modalTransitionStyle="flipHorizontal" id="ygu-u7-UNj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUy-BG-lEl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GlB-F6-Yoo">
+                    <connections>
+                        <action selector="onTap:" destination="FSF-Uj-fh8" id="uhe-rI-XaN"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1154" y="831"/>
         </scene>
@@ -191,12 +228,12 @@
                                     <action selector="goBack:" destination="vtZ-dD-iVO" eventType="touchUpInside" id="3MJ-ep-qrf"/>
                                 </connections>
                             </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="vCO-yq-019">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="vCO-yq-019">
                                 <rect key="frame" x="0.0" y="74" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_text" id="xKi-v2-7rn">
-                                        <rect key="frame" x="0.0" y="8" width="320" height="70"/>
+                                        <rect key="frame" x="0.0" y="2" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login_form" id="uAT-9q-tPH">
@@ -217,20 +254,27 @@
                                     </textField>
                                 </subviews>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_in_buttons" id="rdR-P1-nhi">
-                                <rect key="frame" x="0.0" y="456" width="320" height="104"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfB-m4-qwC">
-                                <rect key="frame" x="16" y="470" width="288" height="52"/>
+                            <view contentMode="scaleToFill" id="MLc-gr-IXn">
+                                <rect key="frame" x="0.0" y="445" width="320" height="122"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="onSignInButton:" destination="vtZ-dD-iVO" eventType="touchUpInside" id="LTj-aC-5tD"/>
-                                </connections>
-                            </button>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign_in_buttons" id="rdR-P1-nhi">
+                                        <rect key="frame" x="0.0" y="9" width="320" height="104"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wfB-m4-qwC">
+                                        <rect key="frame" x="16" y="35" width="288" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="onSignInButton:" destination="vtZ-dD-iVO" eventType="touchUpInside" id="LTj-aC-5tD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -247,6 +291,7 @@
                         <outlet property="passwordTextField" destination="H7y-h4-Gt5" id="5Og-Sl-uNC"/>
                         <outlet property="scrollView" destination="vCO-yq-019" id="eSu-bP-nBv"/>
                         <outlet property="signInButton" destination="wfB-m4-qwC" id="ALL-C9-kSu"/>
+                        <outlet property="signInView" destination="MLc-gr-IXn" id="CwD-UV-RQw"/>
                         <segue destination="CPp-rd-itF" kind="modal" identifier="signInSegue" modalTransitionStyle="flipHorizontal" id="K6P-XD-lO1"/>
                     </connections>
                 </viewController>
@@ -548,16 +593,6 @@
                                     <segue destination="cxu-nO-bHn" kind="modal" id="ea1-RQ-bm1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pbz-1D-bqM">
-                                <rect key="frame" x="-1" y="63" width="322" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="banner">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="zKk-EL-mXY" kind="modal" id="Ogr-dP-xgd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Lgh-ty-KIN">
                                 <rect key="frame" x="242" y="11" width="79" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -566,6 +601,16 @@
                                 </state>
                                 <connections>
                                     <segue destination="y4N-0P-AUr" kind="push" id="H0q-qw-x12"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="pbz-1D-bqM">
+                                <rect key="frame" x="-1" y="63" width="327" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="banner">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="zKk-EL-mXY" kind="modal" id="Ogr-dP-xgd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -577,6 +622,7 @@
                     <connections>
                         <outlet property="feedImageView" destination="w4L-Ec-dFU" id="Yhe-9B-BSt"/>
                         <outlet property="feedScrollView" destination="OYY-sH-8zd" id="vgx-lO-gp4"/>
+                        <outlet property="learnMoreButton" destination="pbz-1D-bqM" id="V9Y-e0-R6t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wiZ-5J-j0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -614,6 +660,12 @@
         <image name="feed" width="320" height="1564"/>
         <image name="feed_nav" width="320" height="65"/>
         <image name="intro" width="320" height="1136"/>
+        <image name="intro_tile1" width="153" height="152"/>
+        <image name="intro_tile2" width="76" height="75"/>
+        <image name="intro_tile3" width="76" height="76"/>
+        <image name="intro_tile4" width="76" height="76"/>
+        <image name="intro_tile5" width="76" height="75"/>
+        <image name="intro_tile6" width="76" height="75"/>
         <image name="login_form" width="320" height="113"/>
         <image name="login_text" width="320" height="70"/>
         <image name="scrubber" width="320" height="36"/>
